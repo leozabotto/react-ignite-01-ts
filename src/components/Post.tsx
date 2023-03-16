@@ -1,4 +1,4 @@
-import { ChangeEvent, InvalidEvent, SubmitEvent, useState } from 'react';
+import { ChangeEvent, InvalidEvent, useState } from 'react';
 import { format, formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
@@ -51,7 +51,7 @@ export function Post({ post }: PostProps) {
     event.target.setCustomValidity('Esse campo é obrigatório!');
   }
 
-  function handleCreateNewComment(e: SubmitEvent<HTMLFormElement>) {
+  function handleCreateNewComment(e: SubmitEvent) {
     e.preventDefault();
     setComments([...comments, newCommentText]);
     setNewCommentText('');
